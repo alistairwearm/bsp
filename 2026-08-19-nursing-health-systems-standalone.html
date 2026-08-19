@@ -1668,14 +1668,6 @@
         return res2.text();
       })).then((t) => {
         if (!t) return;
-        const parsed = parseDcText(t);
-        if (!parsed) {
-          console.error(
-            '[dc-runtime] sibling fetch for "' + name + '":',
-            url,
-            "has no <x-dc> block \u2014 not a Design Component."
-          );
-          return;
         }
         if (parsed.props) r.propsMeta = parsed.props;
         if (parsed.preview) r.preview = parsed.preview;
